@@ -1,0 +1,148 @@
+/* Стилі для контейнера */
+div {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #212121;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    text-align: center; /* Центрування вмісту */
+}
+
+/* Стилі для міток */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-align: left; /* Ліве вирівнювання міток вводу */
+}
+
+/* Стилі для полів вводу */
+input {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    color: #111;
+    text-align: left; /* Ліве вирівнювання тексту вводу */
+}
+
+/* Стилі для кнопок */
+button {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    padding: 3px 8px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fffcfc;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #725ac100;
+    border-radius: 8px;
+}
+
+button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #646464;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+button {
+    border: 2px solid #ffffff; /* Додайте бажаний колір межі */
+}
+
+/* Стилі для списків */
+ul {
+    list-style-type: none;
+    padding: 0;
+    color: #ffffff;
+}
+
+/* Стилі для елементів списку */
+li {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Стилі для кнопок видалення */
+li button {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    padding: 3px 8px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fffcfc;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #725ac100;
+    border-radius: 8px;
+}
+
+li button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #646464;
+}
+
+li button {
+    border: 2px solid #ffffff; /* Додайте бажаний колір межі */
+}
+
+/* Стилі для міток розділу */
+.section-label {
+    text-align: left; /* Ліве вирівнювання міток розділу */
+}
+
+/* Стилі для кнопок видалення з окремим класом */
+.remove-button {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    padding: 3px 8px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fffcfc;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #725ac100;
+    border-radius: 8px;
+}
+
+.remove-button:active {
+    transform: scale(0.9);
+}
+
+.remove-button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #646464;
+}
+
+.remove-button {
+    border: 2px solid #ffffff; /* Додайте бажаний колір межі */
+}
+
+/* Адаптивні стилі для екранів менше 600px */
+@media only screen and (max-width: 600px) {
+    div {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    input {
+        width: 100%;
+    }
+}

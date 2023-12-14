@@ -1,0 +1,72 @@
+/* Стилі для блока з додаванням нової нотатки */
+
+.note-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #212121;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Додаємо невеликий box shadow з півпрозорістю */
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Стилі для випадаючих списків, полів вводу та textarea */
+
+select[name="labels"],
+input[name="title"],
+select[name="categories"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.textarea {
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Стилі для кнопок */
+
+button {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    padding: 3px 8px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fffcfc;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #725ac100;
+    border-radius: 8px;
+}
+
+button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #646464;
+}
+
+button {
+    border: 2px solid #ffffff; /* Додаємо бажаний колір межі для кнопок */
+}

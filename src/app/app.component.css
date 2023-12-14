@@ -1,0 +1,215 @@
+/* app.component.css */
+
+/* Контейнер для всього додатка */
+.app-container {
+  display: flex;
+  transition: margin-left 0.3s;
+}
+
+/* Основний вміст */
+.main-content {
+  margin-left: 250px;
+  padding: 16px;
+  transition: margin-left 0.3s;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Додатковий стиль для сіткового макету */
+.main-content2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* Стилізація контейнера для нотаток */
+.notes-container {
+  text-align: center;
+}
+
+/* Стилізація бічної панелі */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  background-color: #212121;
+  padding-top: 20px;
+  position: fixed;
+  transition: margin-left 0.3s; /* Додати перехід для плавної анімації */
+}
+
+/* Стилізація посилань у бічній панелі */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+}
+
+/* Ефект при наведенні на посилання в бічній панелі */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Стилізація закритої бічної панелі */
+.sidebar-closed .main-content{
+  margin-left: 0;
+}
+
+.sidebar-closed .sidebar {
+  margin-left: -250px;
+}
+
+/* Стилізація кнопки перемикання */
+.toggle-button {
+  width: 2rem;
+  height: 2rem;
+  padding: .25rem;
+  background-color: #212121;
+  backdrop-filter: saturate(180%) blur(20px);
+  border: solid 1px #212121;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+}
+
+/* Адаптація для менших екранів */
+@media screen and (max-width: 767px) {
+  .toggle-button {
+    left: 5px;
+  }
+}
+
+/* Додаткова адаптація для екранів менше 480px */
+@media screen and (max-width: 479px) {
+  .toggle-button {
+    left: 0;
+  }
+}
+
+/* Ефект при наведенні на кнопку перемикання */
+.toggle-button:hover {
+  box-shadow: inset 0 -100px 0 0 #111;
+}
+
+/* Стилізація трьох ліній у кнопці перемикання */
+.toggle-button span {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: calc(.25rem - 1px);
+  left: calc(.25rem - 1px);
+  transition: transform .1806s cubic-bezier(.04,.04,.12,.96);
+}
+
+/* Стилізація ліній у кнопці перемикання */
+.toggle-button span:before {
+  content: '';
+  width: 1.5rem;
+  height: .125rem;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  transition: transform .1596s cubic-bezier(.52,.16,.52,.84) .1008s;
+}
+
+/* Стилізація верхньої та нижньої ліній у кнопці перемикання */
+.toggle-button span:nth-child(1)::before {
+  top: .625rem;
+  transform: translateY(-3px);
+}
+
+.toggle-button span:nth-child(2)::before {
+  bottom: .625rem;
+  transform: translateY(3px);
+}
+
+/* Ефект при наведенні на лінії у кнопці перемикання */
+.toggle-button:hover :nth-child(1),
+.toggle-button:hover :nth-child(2) {
+  transition: transform .3192s cubic-bezier(.04,.04,.12,.96) .1008s;
+}
+
+/* Ефект при наведенні на лінії у кнопці перемикання з затримкою */
+.toggle-button:hover :nth-child(1)::before,
+.toggle-button:hover :nth-child(2)::before {
+  transform: none;
+  transition: transform .1806s cubic-bezier(.04,.04,.12,.96);
+}
+
+/* Ефект при наведенні на першу лінію у кнопці перемикання */
+.toggle-button:hover :nth-child(1) {
+  transform: rotate(45deg) translateY(1px);
+}
+
+/* Ефект при наведенні на другу лінію у кнопці перемикання */
+.toggle-button:hover :nth-child(2) {
+  transform: rotate(-45deg) translateY(-1px);
+}
+
+/* Стилізація неупорядкованого списку */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px;
+}
+
+/* Стилізація елементів списку */
+li {
+  margin: 3px 0;
+}
+
+/* Стилізація посилань */
+a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Стилізація кнопок */
+button {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  padding: 3px 8px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #111;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 8px;
+}
+
+/* Ефект при наведенні на кнопки */
+button:hover {
+  color: rgb(0, 0, 0);
+  box-shadow: inset 0 -100px 0 0 #ffffff;
+}
+
+/* Стилізація контейнера для нотаток */
+.notes-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Стилізація картки нотатки */
+.note-card {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1 1 300px;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+/* Стилізація пункту меню із зміною вигляду курсору при наведенні */
+.menu-item {
+  cursor: pointer;
+}

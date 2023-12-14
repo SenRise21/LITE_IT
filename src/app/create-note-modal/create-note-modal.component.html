@@ -1,0 +1,46 @@
+<!-- Контейнер для форми створення нової нотатки -->
+<div class="note-container">
+  <h2>Додати нову нотатку</h2>
+
+  <!-- Поле для введення назви нотатки -->
+  <div>
+    <label>Назва:</label>
+    <input [(ngModel)]="newNote.title" name="title" required>
+  </div>
+
+  <!-- Поле для введення тексту нотатки -->
+  <div>
+    <label>Текст:</label>
+    <textarea [(ngModel)]="newNote.text" name="text" rows="10" cols="45" class="textarea" required></textarea>
+  </div>
+
+  <!-- Поле для вибору кольору нотатки -->
+  <div>
+    <label>Колір:</label>
+    <input [(ngModel)]="newNote.color" id="noteColor" name="color" type="color">
+  </div>
+
+  <!-- Випадаючий список для обрання ярликів нотатки -->
+  <div>
+    <label>Ярлики:</label>
+    <select [(ngModel)]="selectedLabel" name="labels">
+      <!-- Генерація опцій на основі існуючих міток (ярликів) -->
+      <option *ngFor="let label of existingLabels" [value]="label">{{ label }}</option>
+    </select>
+  </div>
+
+  <!-- Випадаючий список для обрання категорій нотатки -->
+  <div>
+    <label>Категорії:</label>
+    <select [(ngModel)]="selectedCategory" name="categories">
+      <!-- Генерація опцій на основі існуючих категорій -->
+      <option *ngFor="let category of existingCategories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <!-- Кнопки для додавання нової нотатки та скасування операції -->
+  <div>
+    <button (click)="addNote()">Додати нотатку</button>
+    <button (click)="cancel()" class="cancel">Відміна</button>
+  </div>
+</div>

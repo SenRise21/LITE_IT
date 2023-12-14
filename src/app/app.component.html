@@ -1,0 +1,45 @@
+<!-- app.component.html -->
+
+<div class="app-container" [class.sidebar-closed]="!isSidebarOpen">
+  <!-- Бічна панель -->
+  <div class="sidebar">
+    <ul>
+      <!-- Пункт меню для відкриття форми створення нотаток -->
+      <li><a (click)="openDialog()" class="menu-item">Створення нотаток</a></li>
+      <!-- Пункт меню для відкриття форми створення категорій/ярликів -->
+      <li><a (click)="openModal()" class="menu-item">Створення категорій/ярликів</a></li>      
+    </ul>
+  </div>
+
+  <!-- Основний вміст -->
+  <div class="main-content" [@fadeInOut]="notes.length">
+    <!-- Кнопка для перемикача бічної панелі -->
+    <button class="toggle-button" (click)="toggleSidebar()"><span></span><span></span></button>
+  
+    <!-- Відображення нотаток -->
+    <div class="notes-container">
+      <h1>Мої нотатки</h1>
+    </div>
+  
+    <!-- Сітка для відображення нотаток -->
+    <div class="main-content2">
+      <!-- Цикл для ітерації по нотаткам -->
+      <div *ngFor="let note of notes; let i = index" [@fadeInOut]>
+        <!-- Картка нотатки -->
+        <div class="note-card" [style.background-color]="note.color">
+          <h2>{{ note.title }}</h2>
+          <!-- Відображення тексту нотатки або скороченого варіанту -->
+          <p *ngIf="note.text.length <= 20; else fullText">{{ note.text }}</p>
+          <!-- Шаблон для повного тексту, якщо текст довший за 20 символів -->
+          <ng-template #fullText>
+            <p>{{ note.text.slice(0, 20) + '...' }}</p>
+          </ng-template>
+          <!-- Кнопки для редагування, видалення та перегляду деталей нотатки -->
+          <button (click)="openEditModal(i)">Редагувати</button>
+          <button (click)="deleteNote(i)">Видалити</button>
+          <button (click)="openDetailsModal(i)">Деталі</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div>
+  <!-- Введення заголовку нотатки -->
+  <label for="noteTitle">Назва:</label>
+  <input type="text" id="noteTitle" [(ngModel)]="editedNote.title">
+
+  <!-- Текстова область для вмісту нотатки -->
+  <label for="noteText">Текст:</label>
+  <textarea id="noteText" [(ngModel)]="editedNote.text" rows="10" cols="45" class="textarea"></textarea>
+
+  <!-- Вибір кольору нотатки -->
+  <label for="noteColor">Колір:</label>
+  <input type="color" id="noteColor" [(ngModel)]="editedNote.color">
+
+  <!-- Випадаючий список для ярликів нотатки -->
+  <label for="noteLabels">Ярлики:</label>
+  <select id="noteLabels" [(ngModel)]="newLabel" (ngModelChange)="addNewLabel()">
+      <option *ngFor="let label of data.allLabels" [value]="label">{{ label }}</option>
+  </select>
+  <!-- Відображення обраних ярликів з кнопкою видалення -->
+  <div>
+      <div *ngFor="let label of editedNote.labels; let i = index">
+          {{ label }}
+          <button (click)="removeLabel(i)">Видалити</button>
+      </div>
+  </div>
+
+  <!-- Випадаючий список для категорій нотатки -->
+  <label for="noteCategories">Категорії:</label>
+  <select id="noteCategories" [(ngModel)]="newCategory" (ngModelChange)="addNewCategory()">
+      <option *ngFor="let category of data.allCategories" [value]="category">{{ category }}</option>
+  </select>
+  <!-- Відображення обраних категорій з кнопкою видалення -->
+  <div>
+      <div *ngFor="let category of editedNote.categories; let i = index">
+          {{ category }}
+          <button (click)="removeCategory(i)">Видалити</button>
+      </div>
+  </div>
+
+  <!-- Кнопки "Зберегти" та "Скасувати" -->
+  <button (click)="onSave()">Зберегти</button>
+  <button (click)="onCancel()">Скасувати</button>
+</div>

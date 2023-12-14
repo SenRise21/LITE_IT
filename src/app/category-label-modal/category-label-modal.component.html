@@ -1,0 +1,41 @@
+<!-- Розмітка для компонента створення/видалення категорій та ярликів -->
+
+<div class="container">
+    <!-- Введення нової категорії -->
+    <label for="newCategory" class="input-label">Нова категорія:</label>
+    <input id="newCategory" [(ngModel)]="newCategory" required class="input-field" />
+    <button (click)="createNewCategory()" class="action-button">Додати категорію</button>
+  
+    <!-- Відображення існуючих категорій, якщо вони існують -->
+    <div *ngIf="existingCategories.length > 0">
+      <label class="section-label">Існуючі категорії:</label>
+      <ul>
+        <!-- Цикл для виведення списку існуючих категорій -->
+        <li *ngFor="let category of existingCategories">
+          {{ category }} <button (click)="removeCategory(category)" class="remove-button">Видалити</button>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Простір для відокремлення блоків -->
+    <div class="spacer"></div>
+  
+    <!-- Введення нового ярлика -->
+    <label for="newLabel" class="input-label">Новий ярлик:</label>
+    <input id="newLabel" [(ngModel)]="newLabel" required class="input-field" />
+    <button (click)="createNewLabel()" class="action-button">Додати ярлик</button>
+  
+    <!-- Відображення наявних ярликів, якщо вони існують -->
+    <div *ngIf="existingLabels.length > 0">
+      <label class="section-label">Наявні ярлики:</label>
+      <ul>
+        <!-- Цикл для виведення списку наявних ярликів -->
+        <li *ngFor="let label of existingLabels">
+          {{ label }} <button (click)="removeLabel(label)" class="remove-button">Видалити</button>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Кнопка для скасування дії -->
+    <button (click)="cancel()" class="cancel-button">Скасування</button>
+  </div>  

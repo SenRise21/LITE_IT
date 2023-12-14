@@ -1,0 +1,27 @@
+/* Загальні стилі для контейнера модального вікна */
+div {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #212121;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+/* Стилі для заголовка модального вікна */
+
+h2 {
+  color: #ffffff;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Стилі для текстового вмісту модального вікна */
+
+p {
+  color: #ffffff;
+  font-size: 1.2em;
+  line-height: 1.5;
+  white-space: pre-wrap; /* Визначаємо, як обробляти пробіли та переноси рядків */
+  word-break: break-all; /* Визначаємо, як обробляти переноси слів */
+  max-width: 400px; /* Встановлюємо максимальну ширину для тексту */
+}
